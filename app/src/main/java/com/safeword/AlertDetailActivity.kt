@@ -56,6 +56,8 @@ class AlertDetailActivity : AppCompatActivity() {
             if (alert.imageUrls.size > 1) {
                 imageView2.visibility = View.VISIBLE
                 imageView2.load(alert.imageUrls[1])
+            } else {
+                imageView2.visibility = View.GONE
             }
             // Update location
             if (alert.lat != null && alert.lng != null) {
