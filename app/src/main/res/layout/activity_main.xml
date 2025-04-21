@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_listening"
+        android:textSize="18sp" />
+    <Switch
+        android:id="@+id/switchListening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="@string/switch_off"
+        android:textOn="@string/switch_on"
+        android:checked="false"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/buttonSafeWords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/manage_safe_words" />
+
+    <Button
+        android:id="@+id/buttonContacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/manage_contacts"
+        android:layout_marginTop="8dp" />
+</LinearLayout>

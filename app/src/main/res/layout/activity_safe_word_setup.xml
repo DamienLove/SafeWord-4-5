@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editSafeWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_safe_word"
+        android:inputType="textCapWords" />
+
+    <Spinner
+        android:id="@+id/spinnerUrgency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/buttonAddSafeWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_safe_word"
+        android:layout_marginTop="8dp" />
+
+    <ListView
+        android:id="@+id/listSafeWords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

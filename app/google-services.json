@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "322564397148",
+    "project_id": "safeword-4-5",
+    "storage_bucket": "safeword-4-5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322564397148:android:fcd747f02e631b55abee99",
+        "android_client_info": {
+          "package_name": "com.safeword"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322564397148-uuqrackaclt4k8sque4h1u6lv4cuhuo6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCndR01DzT90WC6etC9RewjewzPyGwyxLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322564397148-uuqrackaclt4k8sque4h1u6lv4cuhuo6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
