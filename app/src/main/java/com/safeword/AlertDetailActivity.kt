@@ -10,12 +10,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import coil.ImageLoader
+import coil.decode.SvgDecoder
 import coil.load
 import com.example.safeword.R
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.firebase.firestore.FirebaseFirestore
 import com.example.safeword.model.Alert
+import com.google.firebase.firestore.FirebaseFirestore
 
 class AlertDetailActivity : AppCompatActivity() {
     private lateinit var textAlertInfo: TextView
@@ -33,6 +33,11 @@ class AlertDetailActivity : AppCompatActivity() {
         imageView1 = findViewById(R.id.imageView1)
         imageView2 = findViewById(R.id.imageView2)
         buttonCallEmergency = findViewById(R.id.buttonCallEmergency)
+        val imageLoader = ImageLoader.Builder(this)
+            .components {
+                add(SvgDecoder.Factory())
+            }
+            .build()
         alertId = intent.getStringExtra("alertId")
         if (alertId == null) {
             finish()
@@ -54,12 +59,12 @@ class AlertDetailActivity : AppCompatActivity() {
             // Update images if available
             if (alert.imageUrls.isNotEmpty()) {
                 imageView1.visibility = View.VISIBLE
-                imageView1.load(alert.imageUrls[0])
+                imageView1.load(alert.imageUrls[0], imageLoader)
             }
             if (alert.imageUrls.size > 1) {
                 imageView2.visibility = View.VISIBLE
-                imageView2.load(alert.imageUrls[1])
-            } else {
+                imageView2.load(alert.imageUrls[1], imageLoader)
+            }else {
                 imageView2.visibility = View.GONE
             }
             // Update location
@@ -85,7 +90,7 @@ class AlertDetailActivity : AppCompatActivity() {
             alertId?.let {
                 alertRef.update("callRequested", true)
                 Toast.makeText(this, R.string.call_requested, Toast.LENGTH_SHORT).show()
-                buttonCallEmergency.isEnabled = false
+                 buttonCallEmergency.isEnabled = false
             }
         }
     }

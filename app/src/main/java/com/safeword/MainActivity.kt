@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
         // 🔐 Check login first
         if (FirebaseAuth.getInstance().currentUser == null) {
@@ -48,8 +49,6 @@ class MainActivity : AppCompatActivity() {
             finish()
             return
         }
-
-        setContentView(R.layout.activity_main)
 
         startListeningButton = findViewById(R.id.btn_start_listening)
         manageContactsButton = findViewById(R.id.btn_manage_contacts)
